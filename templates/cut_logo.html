@@ -10,13 +10,16 @@
   jQuery(function($){
 
     var jcrop_api;
-
+	
+	$('.requiresjcrop').hide();
     $('#target').Jcrop({
       onChange:   showCoords,
       onSelect:   showCoords,
       onRelease:  clearCoords
     },function(){
       jcrop_api = this;
+	   $('#ar_lock,#size_lock,#bg_swap').attr('checked',false);
+        $('.requiresjcrop').show();
     });
 
     $('#coords').on('change','input',function(e){
@@ -27,7 +30,7 @@
       jcrop_api.setSelect([x1,y1,x2,y2]);
     });
 
-  });
+
 
   // Simple event handler, called from onChange and onSelect
   // event handlers, as per the Jcrop invocation above
@@ -43,8 +46,19 @@
 
   function clearCoords()
   {
-    $('#coords input').val('');
+   jcrop_api.setOptions({ allowSelect: true });
+      $('#can_click').attr('checked',false);
+	  $('#ar_lock').attr('checked',false);
+ 
   };
+  
+      $('#ar_lock').change(function(e) {
+	jcrop_api.setOptions({ allowSelect: !!this.checked });
+      jcrop_api.setOptions(this.checked?
+        { aspectRatio: 1 }: { aspectRatio: 0 });
+      jcrop_api.focus();
+    });
+	});
 
 </script>
 
@@ -60,12 +74,13 @@
 <div class="span12">
 <div class="jc-demo-box">
 
- <form id="coords"
+
+  <form id="coords"
     class="coords"
     onsubmit="return true;"
-	action="http://c8df107d.ngrok.io/av_proces" method="post" enctype="multipart/form-data">
-
+	action="http://c8df107d.ngrok.io/av_proces_logo" method="post" enctype="multipart/form-data">
     <div class="inline-labels">
+	<label>正方形模式(請先打開)<input type="checkbox" id="ar_lock" /></label><br>
 	<label>X1 <input type="text" size="4" id="x1" name="x1" /></label>
     <label>Y1 <input type="text" size="4" id="y1" name="y1" /></label>
     <label>X2 <input type="text" size="4" id="x2" name="x2" /></label>
