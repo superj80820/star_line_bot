@@ -1,4 +1,14 @@
 # star_line_bot
+
+## 使用系統
+
+### 加入髒沙發
+
+[https://line.me/R/ti/p/%40bxc5238x](https://line.me/R/ti/p/%40bxc5238x)
+
+![alt tag](https://i.imgur.com/H6kCV9Y.png)
+
+## 參考
 * 剪裁：
 <https://www.denpe.com/javascript-clip-img/>
 * (非常重要)ssl憑證應用在flask上：
@@ -11,11 +21,3 @@
 ftp成功：<https://www.minwt.com/website/server/17377.html>
 <https://blog.gcp.expert/gcp-letsencrypt-ssl/>
 <https://sammy197.tw/4076/gwp-%E5%9C%A8google-cloud-platform%E8%A3%A1%E4%BD%BF%E7%94%A8ssl%E6%86%91%E8%AD%89/>
-
-## 使用系統
-
-### 加入髒沙發
-
-[https://line.me/R/ti/p/hgNV3haVVN](https://line.me/R/ti/p/hgNV3haVVN)
-
-![alt tag](https://i.imgur.com/H6kCV9Y.png)
