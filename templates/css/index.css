@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+* {
+    font-family: 'Noto Sans TC';
+}
+
+#app {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #F287A7;
+  color: #FFFFFF;
+}
+
+img {
+  width: 100%;
+}
+
+.nav>li>a.active,
+.nav>li>a:hover,
+.nav>li>a:focus {
+   background-color: #f7bacd;
+}
+
+a {
+  color: white;
+}
+
+button {
+  float: right;
+}
+
+.textDiv {
+	display: flex;
+  flex-direction: column;
+}
