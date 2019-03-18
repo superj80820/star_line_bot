@@ -1,0 +1,6 @@
+pandas
+flask
+requests
+line-bot-sdk
+imgurpython
+Pillow
