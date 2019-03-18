@@ -397,48 +397,49 @@ def handle_message(event):
     
     
     if isinstance(event.source, SourceGroup):
-        print(event.source.group_id)
-        by_group_id=event.source.group_id
-        with lite.connect('av_data.sqlite') as db:
-            read=pandas.read_sql_query('select * from select_group_id',con = db)
+        # print(event.source.group_id)
+        # by_group_id=event.source.group_id
+        # with lite.connect('av_data.sqlite') as db:
+        #     read=pandas.read_sql_query('select * from select_group_id',con = db)
 
-        if sum(read['group_id']==by_group_id)!=0:
-            with lite.connect('av_data.sqlite') as db:
-                read=pandas.read_sql_query('select * from select_group_id',con = db)
-                ps=read[read['group_id']==by_group_id].iloc[0,2].replace('\n',' ')
-                ps=ps.replace('//','')
-                ps=ps.replace(':','')
-                mode=read[read['group_id']==by_group_id].iloc[0,4]
+        # if sum(read['group_id']==by_group_id)!=0:
+        #     with lite.connect('av_data.sqlite') as db:
+        #         read=pandas.read_sql_query('select * from select_group_id',con = db)
+        #         ps=read[read['group_id']==by_group_id].iloc[0,2].replace('\n',' ')
+        #         ps=ps.replace('//','')
+        #         ps=ps.replace(':','')
+        #         mode=read[read['group_id']==by_group_id].iloc[0,4]
             
-             #圖片儲存流程
-            message_content = line_bot_api.get_message_content(event.message.id)
+        #      #圖片儲存流程
+        #     message_content = line_bot_api.get_message_content(event.message.id)
 
-            with open('av_girl_data/Client/'+mode+'_'+ps+'_群組_'+by_group_id+'_'+time.strftime("%Y-%m-%d %H-%M-%S",time.localtime())+'.jpg', 'wb') as fd:
-                for chunk in message_content.iter_content():
-                    fd.write(chunk)
-            #圖片儲存流程
+        #     with open('av_girl_data/Client/'+mode+'_'+ps+'_群組_'+by_group_id+'_'+time.strftime("%Y-%m-%d %H-%M-%S",time.localtime())+'.jpg', 'wb') as fd:
+        #         for chunk in message_content.iter_content():
+        #             fd.write(chunk)
+        #     #圖片儲存流程
 
-            with lite.connect('av_data.sqlite') as db:
-                db.execute('DELETE FROM select_group_id WHERE group_id="'+by_group_id+'"')
+        #     with lite.connect('av_data.sqlite') as db:
+        #         db.execute('DELETE FROM select_group_id WHERE group_id="'+by_group_id+'"')
 
-            line_bot_api.reply_message(
-                event.reply_token,
-                TextSendMessage(text='已建立 我們將會審查您的圖片'))
-        else:
-            if isinstance(event.source, SourceGroup):
-                with lite.connect('av_data.sqlite') as db:
-                    read=pandas.read_sql_query('select * from KUSO_mode',con = db)
-                    if sum(read['id']==by_group_id)==0:
-                        image_search("line_bot_av_girl")
-                    else:
-                        image_search("line_bot_av_KUSO")
-            elif isinstance(event.source, SourceUser):
-                with lite.connect('av_data.sqlite') as db:
-                    read=pandas.read_sql_query('select * from KUSO_mode',con = db)
-                    if sum(read['id']==by_user_id)==0:
-                        image_search("line_bot_av_girl")
-                    else:
-                        image_search("line_bot_av_KUSO")
+        #     line_bot_api.reply_message(
+        #         event.reply_token,
+        #         TextSendMessage(text='已建立 我們將會審查您的圖片'))
+        # else:
+        #     if isinstance(event.source, SourceGroup):
+        #         with lite.connect('av_data.sqlite') as db:
+        #             read=pandas.read_sql_query('select * from KUSO_mode',con = db)
+        #             if sum(read['id']==by_group_id)==0:
+        #                 image_search("line_bot_av_girl")
+        #             else:
+        #                 image_search("line_bot_av_KUSO")
+        #     elif isinstance(event.source, SourceUser):
+        #         with lite.connect('av_data.sqlite') as db:
+        #             read=pandas.read_sql_query('select * from KUSO_mode',con = db)
+        #             if sum(read['id']==by_user_id)==0:
+        #                 image_search("line_bot_av_girl")
+        #             else:
+        #                 image_search("line_bot_av_KUSO")
+        pass
 
     elif isinstance(event.source, SourceUser):
         print(event.source.user_id)
