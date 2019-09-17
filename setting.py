@@ -1,14 +1,11 @@
 "[facepp]"
-key = "B2LK45DwbvhBhz6NFcja5q4m3182NMmk"
-secret = "h3jMXHC-fc0aXdcuo_cQOQBERuICfZHA"
+key =
+secret =
 "[line_bot]"
-key = "fQTlGGsjftvsYlGNJQs8h9EAcf/H6EHT6opvFrqDPCWoV0q935w6JAYt/msStr/plkyx6jrr7IDDmynMETpNqvuYD2LAjcbbKRvXMhGUz13NwubC1LNVyIBP1YlRb2t6CinBRkj87JkCCCEu0OsregdB04t89/1O/w1cDnyilFU="
-secret = "5fb8629baa03d0b6d6272924cc1d6e24"
+key =
+secret =
 "[imgur]"
-client_id = "4d9a1c4e3114f60"
-client_secret = "0466d926ec134ed5b378a1beb8ab51e3895eec36"
-access_token = "1fd30e653b9ca8210553fe8ad331ed5669291a47"
-refresh_token = "507767ea1c22158cb25c35bf2fafadc636919246"
-"[line_bot_dev]"
-# key = "29/LcBb47Z+qo4r7u+sowDU20VRcIQ+fZ/kUcdKRBvSbriEbtgGqzSF7IjY80eY61MW4sqyo+NQ7+WkAH+Madtn4DlYvzaKOqSQE+uSCtmHjFqOkdButAO+24NzpQg2KS7vsDt6tnZeGKSXoFHfQAQdB04t89/1O/w1cDnyilFU="
-# secret = "0ef7975dd3724126dec33c34af95d46a"
+client_id =
+client_secret =
+access_token =
+refresh_token =
